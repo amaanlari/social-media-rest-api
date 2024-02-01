@@ -43,12 +43,5 @@ public class UserJpaController {
         repository.deleteById(id);
     }
 
-    @GetMapping("/users/{id}/posts")
-    public List<Post> retrievePostsForUser(@PathVariable long id) {
-        Optional<User> user = repository.findById(id);
-        if (user.isEmpty()) {
-            throw new UserNotFoundException("id: "+id);
-        }
-        return user.get().getPosts();
-    }
+
 }

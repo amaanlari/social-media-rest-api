@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/data/testdb.trace.db
+/src/main/resources/data/testdb.mv.db
