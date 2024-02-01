@@ -52,7 +52,7 @@ public class UserJpaController {
     }
 
     @DeleteMapping("/users/{id}")
-    public void deleteById(@PathVariable Long id) {
+    public void deleteById(@PathVariable long id) {
         userRepository.deleteById(id);
     }
 
@@ -87,6 +87,15 @@ public class UserJpaController {
                 .buildAndExpand(savedPost.getId())
                 .toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/users/{id}/posts/{postId}")
+    public void deletePostByIdForUser(@PathVariable long id, @PathVariable long postId) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("id: "+id);
+        }
+        postRepository.deleteById(postId);
     }
 
 }
