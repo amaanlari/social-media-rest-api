@@ -33,3 +33,4 @@ build/
 .vscode/
 /src/main/resources/data/testdb.trace.db
 /src/main/resources/data/testdb.mv.db
+/src/main/resources/data/testdb.lock.db

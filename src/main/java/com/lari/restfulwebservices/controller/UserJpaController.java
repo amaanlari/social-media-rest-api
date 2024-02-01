@@ -65,6 +65,15 @@ public class UserJpaController {
         return user.get().getPosts();
     }
 
+    @GetMapping("/users/{id}/posts/{postId}")
+    public Post retrievePostByIdForUser(@PathVariable long id, @PathVariable long postId) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("id: "+id);
+        }
+        return user.get().getPosts().stream().filter(post1 -> post1.getId() == postId).findFirst().orElseThrow();
+    }
+
     @PostMapping("/users/{id}/posts")
     public ResponseEntity<Object> createPostForUser(@PathVariable long id, @Valid @RequestBody Post post) {
         Optional<User> user = userRepository.findById(id);
