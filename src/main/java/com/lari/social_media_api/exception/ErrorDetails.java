@@ -1,4 +1,4 @@
-package com.lari.restfulwebservices.exception;
+package com.lari.social_media_api.exception;
 
 import java.time.LocalDateTime;
 

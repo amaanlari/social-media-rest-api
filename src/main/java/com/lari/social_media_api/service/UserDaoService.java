@@ -1,7 +1,6 @@
-package com.lari.restfulwebservices.service;
+package com.lari.social_media_api.service;
 
-import com.lari.restfulwebservices.model.User;
-import org.springframework.stereotype.Service;
+import com.lari.social_media_api.model.User;
 
 import java.util.List;
 

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lari</groupId>
-	<artifactId>restful-web-services</artifactId>
+	<artifactId>social-media-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>restful-web-services</name>
 	<description>restful-web-services</description>

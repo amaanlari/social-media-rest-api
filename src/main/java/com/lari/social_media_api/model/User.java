@@ -1,4 +1,4 @@
-package com.lari.restfulwebservices.model;
+package com.lari.social_media_api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

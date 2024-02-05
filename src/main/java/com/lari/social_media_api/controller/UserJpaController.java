@@ -1,10 +1,10 @@
-package com.lari.restfulwebservices.controller;
+package com.lari.social_media_api.controller;
 
-import com.lari.restfulwebservices.exception.UserNotFoundException;
-import com.lari.restfulwebservices.model.Post;
-import com.lari.restfulwebservices.model.User;
-import com.lari.restfulwebservices.repository.PostRepository;
-import com.lari.restfulwebservices.repository.UserRepository;
+import com.lari.social_media_api.exception.UserNotFoundException;
+import com.lari.social_media_api.model.Post;
+import com.lari.social_media_api.model.User;
+import com.lari.social_media_api.repository.PostRepository;
+import com.lari.social_media_api.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -98,4 +98,15 @@ public class UserJpaController {
         postRepository.deleteById(postId);
     }
 
+    @PutMapping("/users/{id}/posts/{postId}")
+    public ResponseEntity<Object> updatePostForUser(@PathVariable long id, @PathVariable long postId, @Valid @RequestBody Post post) {
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            throw new UserNotFoundException("id: "+id);
+        }
+        post.setUser(user.get());
+        post.setId(postId);
+        postRepository.save(post);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -1,6 +1,6 @@
-package com.lari.restfulwebservices.service;
+package com.lari.social_media_api.service;
 
-import com.lari.restfulwebservices.model.User;
+import com.lari.social_media_api.model.User;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

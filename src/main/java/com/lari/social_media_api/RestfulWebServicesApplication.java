@@ -1,4 +1,4 @@
-package com.lari.restfulwebservices;
+package com.lari.social_media_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

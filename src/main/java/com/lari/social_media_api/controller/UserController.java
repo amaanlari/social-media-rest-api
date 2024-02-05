@@ -1,7 +1,7 @@
-package com.lari.restfulwebservices.controller;
+package com.lari.social_media_api.controller;
 
-import com.lari.restfulwebservices.model.User;
-import com.lari.restfulwebservices.service.UserDaoServiceImpl;
+import com.lari.social_media_api.model.User;
+import com.lari.social_media_api.service.UserDaoServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
